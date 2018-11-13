@@ -30,6 +30,7 @@
   background-color: #ffffff;
   padding: .8rem .5rem .8rem .5rem;
   width: 100%;
+  outline: none;
 }
 
 .form__action {
