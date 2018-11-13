@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { Provider } from 'react-redux';
+
 import './styles/abstracts/fonts.css';
 import './styles/base/base.css';
 import './styles/base/typography.css';
@@ -12,6 +14,8 @@ import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App store={store}/>, document.getElementById('root'));
+ReactDOM.render(
+    <App store={store}/>
+  , document.getElementById('root'));
 
 serviceWorker.unregister();

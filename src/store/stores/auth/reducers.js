@@ -1,36 +1,25 @@
-import ChaptersActions from './actions';
+import AuthActions from './actions';
 
 export const INITIAL_STATE = {
-  items: null,
-  isProcessing: false,
-  isError: false,
-  errorMessage: '',
-  syllabus_id: null
+  isLoggin: false,
+  token: '',
 }
 
 function AuthReducer(state = INITIAL_STATE, action) {
+
   switch (action.type) {
-    case ChaptersActions.FETCH_CHAPTERS_REQUEST:
+    case AuthActions.LOGIN_REQUEST:
+      console.log({ state, action });
+
       return {
         ...state,
-        isProcessing: true,
-        isError: false,
-        errorMessage: ''
       }
-    case ChaptersActions.FETCH_CHAPTERS_SUCCESSFUL:
+    case AuthActions.LOGIN_SUCCESS:
       return {
-        isProcessing: false,
-        isError: false,
-        items: action.payload,
-        errorMessage: ''
       }
-    case ChaptersActions.FETCH_CHAPTERS_REJECTED:
+    case AuthActions.LOGIN_FAILURE:
       return {
         ...state,
-        isProcessing: false,
-        items: null,
-        isError: true,
-        errorMessage: action.payload
       }
     default:
       return state

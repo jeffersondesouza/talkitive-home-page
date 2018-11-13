@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { Router, Route, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
 
 import './styles/App.css';
-import axios from 'axios';
 
 import SignupPage from './pages/SignupPage/SignupPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 
 class App extends Component {
+
 
   componentDidMount() {
 
@@ -16,12 +18,18 @@ class App extends Component {
 
   render() {
     return (
-      <Router history={browserHistory}>
-        <Route path="/" component={SignupPage} />
-        <Route path="/login" component={LoginPage} />
-      </Router>
+      <Provider store={this.props.store} >
+        <Router history={browserHistory}>
+          <Route path="/" component={SignupPage} />
+          <Route path="/login" component={LoginPage} />
+        </Router>
+      </Provider>
     );
   }
+}
+
+App.propTypes = {
+  store: PropTypes.object
 }
 
 export default App;
@@ -43,18 +51,18 @@ const operation = 'login_email-and-password_create';
    email: "joao1@email.com",
  } */
 
- /*  
+/*  
 const user = {
-  name: "joao1",
-  password: "12345678",
-  email: "joao2@email.com",
+ name: "joao1",
+ password: "12345678",
+ email: "joao2@email.com",
 }
 
 axios.post('https://api.dev.talkative.media/v1/signup/email-and-password', user)
-   .then(res => console.log(res.data))
-   .catch(function (error) {
-     console.log({ error });
-   }) */
+  .then(res => console.log(res.data))
+  .catch(function (error) {
+    console.log({ error });
+  }) */
 
 
 

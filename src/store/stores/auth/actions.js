@@ -1,25 +1,13 @@
-export default class AuthReducerActions {
-  static FETCH_CHAPTERS_REQUEST = 'auth:FETCH_CHAPTERS_REQUEST';
-  static FETCH_CHAPTERS_SUCCESS = 'auth:FETCH_CHAPTERS_SUCCESS';
-  static FETCH_CHAPTERS_REJECTE = 'auth:FETCH_CHAPTERS_REJECTE';
+export default class AuthActions {
+  static LOGIN_REQUEST = 'auth:LOGIN_REQUEST';
+  static LOGIN_SUCCESS = 'auth:LOGIN_SUCCESS';
+  static LOGIN_FAILURE = 'auth:LOGIN_FAILURE';
 
-  static fetchChaptersRequest() {
+  static login() {
     return {
-      type: AuthReducerActions.FETCH_CHAPTERS_REQUEST
+      type: AuthActions.LOGIN_REQUEST
     }
   }
 
-  static fetchChaptersSuccessful(payload) {
-    return {
-      type: AuthReducerActions.FETCH_CHAPTERS_SUCCESSFUL,
-      payload: payload
-    }
-  }
 
-  static fetchChaptersRejected(error) {
-    return {
-      type: AuthReducerActions.FETCH_CHAPTERS_REJECTED,
-      payload: error
-    }
-  }
 }
