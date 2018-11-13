@@ -9,12 +9,8 @@ import AuthMiddleware from '../../store/stores/auth/middleware';
 
 class LoginPage extends Component {
 
-  componentDidMount() {
-    this.props.login();
-  }
-
   handleLogin = ({ email, password }) => {
-    console.log({ email, password });
+    this.props.login(email, password);
   }
 
   render() {
@@ -39,7 +35,7 @@ const mapStateToProps = state => (
 
 
 const mapDispatchToProps = dispatch => ({
-  login: (fotoId) => dispatch(AuthMiddleware.login()),
+  login: (email, password) => dispatch(AuthMiddleware.loginRequest({ email, password })),
 });
 
 const LoginPageContainer = connect(mapStateToProps, mapDispatchToProps)(LoginPage);

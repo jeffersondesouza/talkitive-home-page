@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import { connect } from 'react-redux';
 
 import './styles/App.css';
 
 import SignupPage from './pages/SignupPage/SignupPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import WelcomePage from './pages/WelcomePage/WelcomePage';
 
 class App extends Component {
 
@@ -22,6 +22,8 @@ class App extends Component {
         <Router history={browserHistory}>
           <Route path="/" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/pagina-inicial" component={WelcomePage} />
+          
         </Router>
       </Provider>
     );
