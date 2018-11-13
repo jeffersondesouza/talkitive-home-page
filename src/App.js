@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
+import configure from './config/config-axios';
 
 import './styles/App.css';
 
@@ -39,7 +40,8 @@ export default App;
 
 
 /*
-// axios.defaults.baseURL = `${API_URL}`;
+// 
+axios.defaults.baseURL = `${API_URL}`;
 const API_URL = 'https://api.dev.talkative.media/docs/#operation/'
 const operation = 'login_email-and-password_create';
 

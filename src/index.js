@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Provider } from 'react-redux';
+import './config/config-axios'
 
 import './styles/abstracts/fonts.css';
 import './styles/base/base.css';
@@ -13,6 +13,8 @@ import store from './store/configureStore'
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
+
+
 
 ReactDOM.render(
     <App store={store}/>
