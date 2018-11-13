@@ -1,92 +1,79 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import { Router, Route, browserHistory } from 'react-router';
+
 import './styles/App.css';
 import axios from 'axios';
+
+import SignupPage from './pages/SignupPage/SignupPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 class App extends Component {
 
   componentDidMount() {
 
-    const API_URL = 'https://api.dev.talkative.media/docs/#operation/'
-    const operation = 'login_email-and-password_create';
-
-    // axios.defaults.baseURL = `${API_URL}`;
-
-    /*  const user = {
-       name: "joao1",
-       password: "12345678",
-       email: "joao1@email.com",
-     } */
-
-    const user = {
-      name: "joao1",
-      password: "12345678",
-      email: "joao2@email.com",
-    }
-
-    /*  axios.post('https://api.dev.talkative.media/v1/signup/email-and-password', user)
-       .then(res => console.log(res.data))
-       .catch(function (error) {
-         console.log({ error });
-       }) */
   }
 
   render() {
     return (
-      <div className="App">
-        <header class="header">
-          <h1 class="header__title">Sua voz será ouvida e recompensada</h1>
-          <div class="header__form-block">
-            <form class="form__header">
-              <h2 class="form__header-title">Sua primeira tarefa é preencher seus dados de acesso:</h2>
-              <div class="form__group">
-                <input class="form__input" type="email" placeholder="Digite seu emaill" />
-              </div>
-              <div class="form__group">
-                <input class="form__input" type="email" placeholder="Digite seu emaill" />
-              </div>
-              <div class="form__action">
-                <button class="btn btn--facebook u-flex-grow">Entrar com Facebook</button>
-                <button class="btn btn--primary">Entrar</button>
-              </div>
-              <div class="form__forgot-password-block">
-                Esqueci minha senha
-        </div>
-            </form>
-          </div>
-          <div class="header__call">
-            Você foi convidado a participar da mais inovadora ferramenta de mídia para micro-influenciadores nas redes
-            sociais.
-    </div>
-        </header>
-        <div class="">
-
-        </div>
-        <footer class="footer">
-          <div class="footer__logo-block">
-            <div class="footer__logo">
-              Talktive
-      </div>
-            <div class="footer__copyrights">
-              R Mobify é uma ferramenta Talktive by Wololo Tech
-      </div>
-          </div>
-          <div class="footer__nav-block">
-            <nav class="footer__nav">
-              <a class="footer__nav-link" href="#">Enviar Feedback</a>
-              <span class="bullet-separator"></span>
-              <a class="footer__nav-link" href="#">Sobe Nós</a>
-              <span class="bullet-separator"></span>
-              <a class="footer__nav-link" href="#">Fale Conosco</a>
-            </nav>
-          </div>
-        </footer>
-      </div>
+      <Router history={browserHistory}>
+        <Route path="/" component={SignupPage} />
+        <Route path="/login" component={LoginPage} />
+      </Router>
     );
   }
 }
 
 export default App;
+
+
+
+
+
+
+
+/*
+// axios.defaults.baseURL = `${API_URL}`;
+const API_URL = 'https://api.dev.talkative.media/docs/#operation/'
+const operation = 'login_email-and-password_create';
+
+  const user = {
+   name: "joao1",
+   password: "12345678",
+   email: "joao1@email.com",
+ } */
+
+ /*  
+const user = {
+  name: "joao1",
+  password: "12345678",
+  email: "joao2@email.com",
+}
+
+axios.post('https://api.dev.talkative.media/v1/signup/email-and-password', user)
+   .then(res => console.log(res.data))
+   .catch(function (error) {
+     console.log({ error });
+   }) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
