@@ -1,0 +1,144 @@
+.header {
+  background-image: linear-gradient(111deg, #00bc9b, #1696e1);
+  background-repeat: no-repeat;
+  background-size: 100% 70vh;
+  background-position: top;
+  height: 90vh;
+  color: #ffffff;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 37.5em) {
+  .header {
+    height: 70vh;
+  }
+}
+
+.header__title {
+  padding: 2.5rem;
+}
+
+.header__form-block {
+  widows: 80%;
+}
+
+.header__call {
+  width: 90%;
+  margin: 2rem auto 0;
+}
+
+.form__header {  
+  margin: 0 auto;
+  background-color: #ffffff;
+  width: 90%;
+  border-radius: .5rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 3.5rem 3rem;
+}
+
+@media (min-width: 37.5em) {
+  .form__header {
+    width: 49rem;
+  }
+}
+
+.form__header-title {
+  color: #000000;
+  margin: 0 2.5rem 2.5rem;
+  color: #4a4a4a;
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.form__input {
+  border-radius: 5px;
+  border: solid 1px #d6d9e0;
+  background-color: #ffffff;
+  padding: .8rem .5rem .8rem .5rem;
+  width: 100%;
+}
+
+.form__action {
+  margin-top: 2.8rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form__forgot-password-block {
+  color: #bbbec4;
+  margin-top: 3.2rem;
+}
+
+.u-flex-grow {
+  flex-grow: 1;
+}
+
+.btn {
+  border-radius: 30rem;
+  border: none;
+  padding: 1.5rem 1rem;
+  color: #ffffff;
+}
+
+.btn--facebook {
+  background-color: #3a589b;
+}
+
+.btn--primary {
+  background-color: #00bc9b;
+  width: 180px;
+}
+
+.btn--facebook.u-flex-grow {
+  margin-right: 1.5rem;
+}
+
+.footer {
+  background-color: #f6f7fb;
+  color: #8e929f;
+  padding: 3.8rem 8rem;
+}
+
+.footer__logo-block {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.footer__logo {
+  color: #000000;
+  font-weight: bold;
+}
+
+.footer__copyrights {
+  padding: 0 1rem 0 3rem;
+}
+
+.footer__nav-block {
+  display: flex;
+}
+
+.footer__nav {
+  margin: 0 0 0 auto;
+}
+
+.footer__nav a {
+  display: block;
+}
+
+.footer__nav .bullet-separator {
+  margin: 0 1rem;
+  display: none;
+}
+
+.footer__nav-link,
+.footer__nav-link:link {
+  color: #8e929f;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.footer__nav-link:hover {
+  color: #4a4a4a;
+}
