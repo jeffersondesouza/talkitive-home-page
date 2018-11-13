@@ -5,24 +5,20 @@ import { Provider } from 'react-redux';
 
 import './styles/App.css';
 
+import { verifyAuthetication } from './utils/RouterRedirector';
+
 import SignupPage from './pages/SignupPage/SignupPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 
 class App extends Component {
-
-
-  componentDidMount() {
-
-  }
-
   render() {
     return (
       <Provider store={this.props.store} >
         <Router history={browserHistory}>
           <Route path="/" component={SignupPage} />
           <Route path="/login" component={LoginPage} />
-          <Route path="/pagina-inicial" component={WelcomePage} />
+          <Route path="/pagina-inicial" component={WelcomePage} onEnter={verifyAuthetication}/>
           
         </Router>
       </Provider>
