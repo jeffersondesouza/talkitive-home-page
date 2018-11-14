@@ -54,3 +54,15 @@
     line-height: 1.8;
   }
 }
+
+@media (min-width: 75em) {
+  .header__call {
+    padding-top: 5rem;
+  }
+}
+
+@media (min-width: 85em) {
+  .header__call {
+    padding-top: 10rem;
+  }
+}

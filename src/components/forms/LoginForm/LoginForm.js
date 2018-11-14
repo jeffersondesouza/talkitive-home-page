@@ -32,7 +32,7 @@ export default class LoginForm extends Component {
 
     if (!this.state.password) {
       this.setState({
-        passwordError: 'Por favor informe um password'
+        passwordError: 'Por favor informe sua senha'
       });
     }
 
