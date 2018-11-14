@@ -1,5 +1,4 @@
-
-.form__header {  
+.form__header {
   margin: 0 auto;
   background-color: #ffffff;
   width: 90%;
@@ -66,4 +65,9 @@
 
 .btn--facebook.u-flex-grow {
   margin-right: 1.5rem;
+}
+
+.form-error {
+  color: red;
+  margin-top: .5rem;
 }
