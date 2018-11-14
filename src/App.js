@@ -12,16 +12,15 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import WelcomePage from './pages/WelcomePage/WelcomePage';
 
 class App extends Component {
+
   render() {
+
     return (
-      <Provider store={this.props.store} >
-        <Router history={browserHistory}>
-          <Route path="/" component={SignupPage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/pagina-inicial" component={WelcomePage} onEnter={verifyAuthetication}/>
-          
-        </Router>
-      </Provider>
+      <Router history={browserHistory}>
+        <Route path="/" component={SignupPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/pagina-inicial" component={WelcomePage} onEnter={verifyAuthetication} />
+      </Router>
     );
   }
 }
@@ -29,6 +28,7 @@ class App extends Component {
 App.propTypes = {
   store: PropTypes.object
 }
+
 
 export default App;
 

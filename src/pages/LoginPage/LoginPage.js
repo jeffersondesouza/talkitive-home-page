@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Footer from '../../components/layout/Footer/Footer';
 import PublicHeader from '../../components/layout/PublicHeader/PublicHeader';
@@ -13,10 +14,14 @@ class LoginPage extends Component {
   }
 
   render() {
+    const authState = this.context.store.getState().auth;
     return (
       <div>
         <PublicHeader>
-          <LoginForm onLogin={this.handleLogin} />
+          <LoginForm
+            isSignigUp={authState.isSignigUp}
+            error={authState.error}
+            onLogin={this.handleLogin} />
         </PublicHeader>
         <Footer />
       </div>
@@ -32,11 +37,12 @@ const mapDispatchToProps = dispatch => ({
   login: (email, password) => dispatch(AuthMiddleware.loginRequest({ email, password })),
 });
 
+LoginPage.contextTypes = {
+  store: PropTypes.object.isRequired
+}
+
 const LoginPageContainer = connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+
 
 export default LoginPageContainer;
 
-/* 
-joao@email.com
-12345678
-*/

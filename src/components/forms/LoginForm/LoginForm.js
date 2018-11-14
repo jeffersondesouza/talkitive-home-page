@@ -63,6 +63,12 @@ export default class LoginForm extends Component {
     });
   }
 
+  renderBtnSubmit = () => (
+    (this.props.isSignigUp)
+      ? <span>Faznedo login...</span>
+      : <span>Entar</span>
+  );
+
   render() {
     return (
       <form onSubmit={this.handleLogin} className="form__header" noValidate>
@@ -87,7 +93,9 @@ export default class LoginForm extends Component {
         </div>
         <div className="form__action">
           <button type="button" className="btn btn--facebook u-flex-grow">Entrar com Facebook</button>
-          <button type="submit" className="btn btn--primary">Entrar</button>
+          <button type="submit" className="btn btn--primary">
+            {this.renderBtnSubmit()}
+          </button>
         </div>
         <div className="form__forgot-password-block">Esqueci minha senha</div>
       </form>

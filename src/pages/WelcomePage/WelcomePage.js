@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
+import './welcome-page.css';
+
 import Footer from '../../components/layout/Footer/Footer';
-import PublicHeader from '../../components/layout/PublicHeader/PublicHeader';
 
 export default class WelcomePage extends Component {
 
@@ -11,10 +12,13 @@ export default class WelcomePage extends Component {
 
   render() {
     return (
-      <div>
-        <PublicHeader>
-          <h1>Bem vindo</h1>
-        </PublicHeader>
+      <div className="welcome-page">
+        <header className="welcome-page__header">
+          <h2 className="welcome-page__header-title">Talktive</h2>
+        </header>
+        <div className="welcome-page__main">
+          <h2 className="welcome-page__main-title">Seja Bem Vindo</h2>
+        </div>
         <Footer />
       </div>
     )

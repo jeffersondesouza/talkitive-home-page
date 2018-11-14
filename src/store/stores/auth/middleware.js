@@ -18,7 +18,7 @@ export default class AuthMiddleware {
           return user;
         })
         .catch(error => {
-          dispatch(AuthActions.loginFailure(error))
+          dispatch(AuthActions.loginFailure(error.response.data.errors[0]))
         });
     }
   }
@@ -37,7 +37,7 @@ export default class AuthMiddleware {
           return user;
         })
         .catch(error => {
-          dispatch(AuthActions.signUpFailure(error))
+          dispatch(AuthActions.signUpFailure(error.response.data.errors[0]))
         });
     }
   }

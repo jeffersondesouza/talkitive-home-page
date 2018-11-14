@@ -24,7 +24,7 @@ export default class AuthActions {
   static loginFailure(error) {
     return {
       type: AuthActions.LOGIN_FAILURE,
-      payload: { ...error }
+      payload: error
     }
   }
 
@@ -45,7 +45,7 @@ export default class AuthActions {
   static signUpFailure(error) {
     return {
       type: AuthActions.SIGNUP_LOGIN_FAILURE,
-      payload: { ...error }
+      payload: error
     }
   }
 

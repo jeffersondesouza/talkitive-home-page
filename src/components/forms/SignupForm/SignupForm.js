@@ -109,10 +109,20 @@ export default class SignupForm extends Component {
     }
   }
 
+  renderBtnSubmit = () => (
+    (this.props.isSignigUp)
+      ? <span>Criando...</span>
+      : <span>Criar Conta</span>
+  );
+
+
   render() {
     return (
       <form onSubmit={this.handleSignUp} className="form__header">
         <h2 className="form__header-title">Para validar seu convite é preciso cadastrar os seguintes dados:</h2>
+        <div className="form__group form-error">
+          {this.props.error}
+        </div>
         <div className="form__group">
           <input
             value={this.state.email}
@@ -141,7 +151,9 @@ export default class SignupForm extends Component {
         </div>
         <div className="form__action">
           <button type="button" className="btn btn--facebook u-flex-grow">Entrar com Facebook</button>
-          <button type="submit" className="btn btn--primary">Criar Conta</button>
+          <button type="submit" className="btn btn--primary">
+            {this.renderBtnSubmit()}
+          </button>
         </div>
       </form>
     )

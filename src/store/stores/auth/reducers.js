@@ -9,6 +9,9 @@ export const INITIAL_STATE = {
 
 function AuthReducer(state = INITIAL_STATE, action) {
 
+  console.log(action);
+
+
   switch (action.type) {
     case AuthActions.LOGIN_REQUEST:
       return {
@@ -20,13 +23,14 @@ function AuthReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         isLoggin: false,
-        user: { ...action.payload }
+        user: { ...action.payload },
+        error: null
       }
     case AuthActions.LOGIN_FAILURE:
       return {
         ...state,
         isLoggin: false,
-        error: { ...action.payload }
+        error: action.payload
       }
     case AuthActions.SIGNUP_LOGIN_REQUEST:
       return {
@@ -38,13 +42,14 @@ function AuthReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         isSignigUp: false,
-        user: { ...action.payload }
+        user: { ...action.payload },
+        error: null
       }
     case AuthActions.SIGNUP_LOGIN_FAILURE:
       return {
         ...state,
         isSignigUp: false,
-        error: { ...action.payload }
+        error: action.payload
       }
 
     default:
