@@ -6,10 +6,6 @@ import Footer from '../../components/layout/Footer/Footer';
 
 export default class WelcomePage extends Component {
 
-  handleSignUp = ({ email, password, confirmPassword }) => {
-    console.log({ email, password, confirmPassword });
-  }
-
   render() {
     return (
       <div className="welcome-page">

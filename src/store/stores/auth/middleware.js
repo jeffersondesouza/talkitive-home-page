@@ -1,8 +1,10 @@
 import AuthActions from './actions'
 
+import authAPI from '../../api/auth-api'
 import { setUserToken } from '../../../utils/LocalStorageManager';
 import { redirectToWelcomePage } from '../../../utils/RouterRedirector';
-import authAPI from '../../api/auth-api'
+import ServerErrorCatcher from '../../../utils/ServerErrorCatcher';
+
 
 export default class AuthMiddleware {
   static loginRequest({ email, password }) {
@@ -18,7 +20,9 @@ export default class AuthMiddleware {
           return user;
         })
         .catch(error => {
-          dispatch(AuthActions.loginFailure(error.response.data.errors[0]))
+          if (ServerErrorCatcher.hasResponseError(error)) {
+            dispatch(AuthActions.loginFailure(ServerErrorCatcher.getFirstResponseError(error)));
+          }
         });
     }
   }
@@ -37,7 +41,9 @@ export default class AuthMiddleware {
           return user;
         })
         .catch(error => {
-          dispatch(AuthActions.signUpFailure(error.response.data.errors[0]))
+          if (ServerErrorCatcher.hasResponseError(error)) {
+            dispatch(AuthActions.signUpFailure(ServerErrorCatcher.getFirstResponseError(error)))
+          }
         });
     }
   }

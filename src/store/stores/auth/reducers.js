@@ -9,9 +9,6 @@ export const INITIAL_STATE = {
 
 function AuthReducer(state = INITIAL_STATE, action) {
 
-  console.log(action);
-
-
   switch (action.type) {
     case AuthActions.LOGIN_REQUEST:
       return {

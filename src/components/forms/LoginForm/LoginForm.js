@@ -73,6 +73,9 @@ export default class LoginForm extends Component {
     return (
       <form onSubmit={this.handleLogin} className="form__header" noValidate>
         <h2 className="form__header-title">Sua primeira tarefa é preencher seus dados de acesso:</h2>
+        <div className="form__group form-error">
+          {this.props.error}
+        </div>
         <div className="form__group">
           <input
             value={this.state.email}
