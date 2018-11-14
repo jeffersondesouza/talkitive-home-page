@@ -1,8 +1,7 @@
-
 .footer {
   background-color: #f6f7fb;
   color: #8e929f;
-  padding: 3.8rem 8rem;
+  padding: 3.8rem 5rem;
 }
 
 .footer__logo-block {
@@ -27,13 +26,8 @@
   margin: 0 0 0 auto;
 }
 
-.footer__nav a {
-  display: block;
-}
-
 .footer__nav .bullet-separator {
-  margin: 0 1rem;
-  display: none;
+  margin: 0 .7rem;
 }
 
 .footer__nav-link,
@@ -45,4 +39,10 @@
 
 .footer__nav-link:hover {
   color: #4a4a4a;
+}
+
+@media (min-width: 37.5em) {
+  .footer {
+    padding: 3.8rem 8rem;
+  }
 }
