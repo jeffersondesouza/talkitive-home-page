@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* tornamos ele herdavel e no body setamos o default - é uma boa prática */
+}
+
+html {
+  font-size: 62.5%;
+  /* por padrão p browser vem com 16px, nos queremos colocar 10px no default para faciliartar nossos cálculos, logo 10/16 = 0.625  */
+}
+
+body {
+  box-sizing: border-box;
+}

@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
+
+
+import './config/config-axios'
+
+import './styles/abstracts/fonts.css';
+import './styles/base/base.css';
+import './styles/base/typography.css';
+import './styles/components/form.css';
+import './styles/components/img.css';
+
+import store from './store/configureStore'
+
 import App from './App';
+
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
+
+ReactDOM.render(
+  <Provider store={store} >
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+
 serviceWorker.unregister();
