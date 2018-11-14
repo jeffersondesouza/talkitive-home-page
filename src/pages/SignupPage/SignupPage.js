@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Footer from '../../components/layout/Footer/Footer';
 import PublicHeader from '../../components/layout/PublicHeader/PublicHeader';
 import SignupForm from '../../components/forms/SignupForm/SignupForm';
+import AuthMiddleware from '../../store/stores/auth/middleware';
 
-export default class SignupPage extends Component {
+class SignupPage extends Component {
 
   handleSignUp = ({ email, password, confirmPassword }) => {
-    console.log({ email, password, confirmPassword });
+    this.props.signUp({ email, password, confirmPassword })
   }
 
   render() {
@@ -21,3 +23,17 @@ export default class SignupPage extends Component {
     )
   }
 }
+
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+const mapDispatchToProps = dispatch => ({
+  signUp: ({ email, password, confirmPassword }) => dispatch(AuthMiddleware.signUp({ email, password, confirmPassword })),
+});
+
+
+const SignupPageContainer = connect(mapStateToProps, mapDispatchToProps)(SignupPage);
+
+export default SignupPageContainer;

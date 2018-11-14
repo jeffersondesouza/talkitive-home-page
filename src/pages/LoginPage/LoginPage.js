@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Footer from '../../components/layout/Footer/Footer';
@@ -25,14 +24,9 @@ class LoginPage extends Component {
   }
 }
 
-LoginPage.propTypes = {
-  store: PropTypes.object
-}
-
-const mapStateToProps = state => (
-  { test: state }
-);
-
+const mapStateToProps = state => ({
+  auth: state.auth
+});
 
 const mapDispatchToProps = dispatch => ({
   login: (email, password) => dispatch(AuthMiddleware.loginRequest({ email, password })),
