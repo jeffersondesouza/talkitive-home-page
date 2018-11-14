@@ -1,11 +1,12 @@
 .header {
   background-image: linear-gradient(111deg, #00bc9b, #1696e1);
   background-repeat: no-repeat;
-  background-size: 100% 57vh;
+  background-size: 100% 65vh;
   background-position: top;
   height: 90vh;
   color: #ffffff;
   margin-bottom: 5rem;
+  position: relative;
 }
 
 .header__title {
@@ -23,12 +24,33 @@
 
 @media (min-width: 37.5em) {
   .header {
-    height: 50vh;
+    background-size: 100% 60vh;
   }
 }
 
-@media (min-width: 40em) {
+@media (min-width: 58em) {
   .header {
-    height: 50vh;
+    background-size: 100% 65vh;
+    padding: 18.5rem 3.6rem 0 0;
+  }
+  .header__title-block {
+    float: left;
+    width: 45%;
+  }
+  .header__title {
+    width: 40rem;
+    padding-top: 10rem;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .header__form-block {
+    float: right;
+  }
+  .header__call {
+    clear: left;
+    padding-top: 3rem;
+    margin-left: 3rem;
+    width: 42%;
+    line-height: 1.8;
   }
 }

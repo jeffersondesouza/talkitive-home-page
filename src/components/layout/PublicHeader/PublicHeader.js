@@ -5,7 +5,9 @@ export default class PublicHeader extends Component {
   render() {
     return (
       <header className="header">
-        <h1 className="header__title">Sua voz será ouvida e recompensada</h1>
+        <div className="header__title-block">
+          <h1 className="header__title">Sua voz será ouvida e recompensada</h1>
+        </div>
         <div className="header__form-block">
           {this.props.children}
         </div>
